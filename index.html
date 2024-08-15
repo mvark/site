@@ -1,0 +1,194 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>
+        #Netizens
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+        .container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+          height: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+ /* padding-top: 75%;  4:3 Aspect Ratio */
+ /* padding-top: 66.66%;  3:2 Aspect Ratio */
+ /* padding-top: 62.5%;  8:5 Aspect Ratio */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+<script>
+  
+$(document).ready(function() {
+    /* find all iframes with ids starting with "tweet_" */
+    $("iframe[id^='tweet_']").load(function() {
+        this.contentWindow.postMessage({ element: this.id, query: "height" },
+            "https://twitframe.com");
+    });
+});
+
+/* listen for the return message once the tweet has been loaded */
+$(window).bind("message", function(e) {
+    var oe = e.originalEvent;
+    if (oe.origin != "https://twitframe.com")
+        return;
+	
+    if (oe.data.height && oe.data.element.match(/^tweet_/)){
+        $("#" + oe.data.element).css("height", parseInt(oe.data.height) + "px");
+        console.log("height=" + oe.data.height);
+    }
+});
+  </script>
+</head>
+
+<body>
+  
+    <button accesskey="j" class="button" onclick="minusDivs()"> ❮ Previous </button>
+    <button accesskey="k" class="button" onclick="plusDivs()"> Next ❯ </button>
+    <hr>
+<div class="container">      
+ <iframe class="responsive-iframe" id="show" border="0" frameborder="0"
+ src="https://twitframe.com/show?url=https://twitter.com/mvark/status/1309720586311008259"></iframe>
+
+<ol id="nav" style="display:none">
+<li><a href="https://twitter.com/mvark/status/1346301182818484224" rel="nofollow" target="_blank">Levels of Hell</a></li>
+<li><a href="https://twitter.com/mvark/status/1344184755273658368" rel="nofollow" target="_blank">App Crazy</a></li>
+<li><a href="https://twitter.com/mvark/status/1342041949851713539" rel="nofollow" target="_blank">Only The News You Like</a></li>
+<li><a href="https://twitter.com/mvark/status/1341098375018528769" rel="nofollow" target="_blank">Betting Bot Blooper</a></li>
+<li><a href="https://twitter.com/mvark/status/1337984348356628480" rel="nofollow" target="_blank">Utopia almost</a></li>
+<li><a href="https://twitter.com/mvark/status/1334931128910639105" rel="nofollow" target="_blank">Trollsourcing</a></li>
+<li><a href="https://twitter.com/mvark/status/1334135350491447299" rel="nofollow" target="_blank">The Life-savers that Politicians can't do without</a>&nbsp;</li>
+<li><a href="https://twitter.com/mvark/status/1332924877678886921" rel="nofollow" target="_blank">Hunt the Hunters</a></li>
+<li><a href="https://twitter.com/mvark/status/1327994676494831616" rel="nofollow" target="_blank">Technology can solve ALL problems</a></li>
+<li><a href="https://twitter.com/mvark/status/1322126217433083904" rel="nofollow" target="_blank">Comparison Shopping</a></li>
+<li><a href="https://twitter.com/mvark/status/1319867390990020608" rel="nofollow" target="_blank">Love Thy Neighbour's YouTube Channel</a></li>
+<li><a href="https://twitter.com/mvark/status/1317695615615168512" rel="nofollow" target="_blank">Impulsive Buying</a></li>
+<li><a href="https://twitter.com/mvark/status/1316370275169046528" rel="nofollow" target="_blank">The Lazy Man Who Lives On The Internet</a></li>
+<li><a href="https://twitter.com/mvark/status/1314826346107858946" rel="nofollow" target="_blank">The Sound of Music</a></li>
+    <li><a href="https://twitter.com/mvark/status/1313418881558409218" rel="nofollow" target="_blank">The Hobby Programmer</a></li>
+    <li><a href="https://twitter.com/mvark/status/1309720586311008259" rel="nofollow" target="_blank">The Masochist and the Chaos Monkey Drone</a></li>
+    <li><a href="https://twitter.com/mvark/status/1309189621964652544" rel="nofollow" target="_blank">Big Brother</a></li>
+    <li><a href="https://twitter.com/mvark/status/1306970324911546368" rel="nofollow" target="_blank">Addiction</a></li>
+    <li><a href="https://twitter.com/mvark/status/1305362567821361153" rel="nofollow" target="_blank">The World in the Whale</a></li>
+    <li><a href="https://twitter.com/mvark/status/1305098019172315142" rel="nofollow" target="_blank">Braggart</a></li>
+    <li><a href="https://twitter.com/mvark/status/1298883588818006018" rel="nofollow" target="_blank">The Fix</a></li>
+    <li><a href="https://twitter.com/mvark/status/1298141320830017537" rel="nofollow" target="_blank">No Free Lunch</a></li>
+    <li><a href="https://twitter.com/mvark/status/1293747327333621760" rel="nofollow" target="_blank">Self-destructive Earth</a></li>
+    <li><a href="https://twitter.com/mvark/status/1290271743861354496" rel="nofollow" target="_blank">The Show Must Go On</a></li>
+    <li><a href="https://twitter.com/mvark/status/1287970478120828931" rel="nofollow" target="_blank">WhatsApp Forwards</a></li>
+    <li><a href="https://twitter.com/mvark/status/1285277296228630528" rel="nofollow" target="_blank">Addicted</a></li>
+    <li><a href="https://twitter.com/mvark/status/1284390738973749248" rel="nofollow" target="_blank">Nag, nag, nag</a></li>
+    <li><a href="https://twitter.com/mvark/status/1284069758497746944" rel="nofollow" target="_blank">Gaming the System</a></li>
+    <li><a href="https://twitter.com/mvark/status/1282920180390129664" rel="nofollow" target="_blank">Drone to Couch Food Delivery</a></li>
+    <li><a href="https://twitter.com/mvark/status/1281812278707253248" rel="nofollow" target="_blank">The Weird gets Weirder</a></li>
+    <li><a href="https://twitter.com/mvark/status/1280440445487595522" rel="nofollow" target="_blank">Every day is April Fool's Day</a></li>
+    <li><a href="https://twitter.com/mvark/status/1279287044825419776" rel="nofollow" target="_blank">The Chronic Excuse Maker</a>&nbsp;</li>
+    <li><a href="https://twitter.com/mvark/status/1277116958622617600" rel="nofollow" target="_blank">Kung flu</a></li>
+    <li><a href="https://twitter.com/mvark/status/1276011179068940288" rel="nofollow" target="_blank">Vanity Fare</a></li>
+    <li><a href="https://twitter.com/mvark/status/1275100440720367616" rel="nofollow" target="_blank">Virtual Reality</a></li>
+    <li><a href="https://twitter.com/mvark/status/1273178338585120768" rel="nofollow" target="_blank">Sound Alerts</a></li>
+    <li><a href="https://twitter.com/mvark/status/1270596329966759937" rel="nofollow" target="_blank">Uncertainty</a></li>
+    <li><a href="https://twitter.com/mvark/status/1269331935555276800" rel="nofollow" target="_blank">Fake news trumps real news</a></li>
+    <li><a href="https://twitter.com/mvark/status/1267796097876979715" rel="nofollow" target="_blank">Nice, but is it Art?</a></li>
+    <li><a href="https://twitter.com/mvark/status/1266226681464762369" rel="nofollow" target="_blank">Artful Dodger</a></li>
+    <li><a href="https://twitter.com/mvark/status/1264428448249872384" rel="nofollow" target="_blank">Mask</a></li>
+    <li><a href="https://twitter.com/mvark/status/1264059705606803456" rel="nofollow" target="_blank">EspaÃ±ol</a>&nbsp;</li>
+    <li><a href="https://twitter.com/mvark/status/1262253734538567680" rel="nofollow" target="_blank">Fake News is Big Business</a></li>
+    <li><a href="https://twitter.com/mvark/status/1261670413332959232" rel="nofollow" target="_blank">Browser Tabs</a></li>
+    <li><a href="https://twitter.com/mvark/status/1259184063010627584" rel="nofollow" target="_blank">Overzealous Parents</a>&nbsp;</li>
+    <li><a href="https://twitter.com/mvark/status/1258384314326151174" rel="nofollow" target="_blank">Bad Connection</a></li>
+    <li><a href="https://twitter.com/mvark/status/1257939727690301440" rel="nofollow" target="_blank">Buzzkill</a></li>
+    <li><a href="https://twitter.com/mvark/status/1257521347061637122" rel="nofollow" target="_blank">Non sequitur</a></li>
+    <li><a href="https://twitter.com/mvark/status/1257200095230980096" rel="nofollow" target="_blank">Treated Like Family</a></li>
+    <li><a href="https://twitter.com/mvark/status/1256110871404670976" rel="nofollow" target="_blank">The Joy Of Science</a></li>
+    <li><a href="https://twitter.com/mvark/status/1255525719091884036" rel="nofollow" target="_blank">Snob</a></li>
+    <li><a href="https://twitter.com/mvark/status/1254984334789885952" rel="nofollow" target="_blank">Tripping down the History Rabbit Hole</a></li>
+    <li><a href="https://twitter.com/mvark/status/1253519209079779330" rel="nofollow" target="_blank">Victim</a></li>
+    <li><a href="https://twitter.com/mvark/status/1250731365705736193" rel="nofollow" target="_blank">Go Digital</a></li>
+    <li><a href="https://twitter.com/mvark/status/1249956675982745603" rel="nofollow" target="_blank">Same Planet, Different Worlds</a></li>
+    <li><a href="https://twitter.com/mvark/status/1247813031993606146" rel="nofollow" target="_blank">Flatten the Curve</a></li>
+    <li><a href="https://twitter.com/mvark/status/1247456124770476032" rel="nofollow" target="_blank">Immunity Booster</a></li>
+    <li><a href="https://twitter.com/mvark/status/1246060933140508673" rel="nofollow" target="_blank">Lockdown</a></li>
+    <li><a href="https://twitter.com/mvark/status/1245211446218117121" rel="nofollow" target="_blank">Noisy Neighbours</a></li>
+    <li><a href="https://twitter.com/mvark/status/1239071736408109056" rel="nofollow" target="_blank">A Badge for Binge Watching</a></li>
+    <li><a href="https://twitter.com/mvark/status/1235080911865049093" rel="nofollow" target="_blank">Selfie stick</a></li>
+    <li><a href="https://twitter.com/mvark/status/1232562289502384128" rel="nofollow" target="_blank">Low Standards</a></li>
+    <li><a href="https://twitter.com/mvark/status/1231461773779169280" rel="nofollow" target="_blank">Near Death Experience</a></li>
+    <li><a href="https://twitter.com/mvark/status/1227823667620352001" rel="nofollow" target="_blank">Fight Club</a></li>
+    <li><a href="https://twitter.com/mvark/status/1227430242228137986" rel="nofollow" target="_blank">It's Always Freak Weather</a></li>
+    <li><a href="https://twitter.com/mvark/status/1225994560955809792" rel="nofollow" target="_blank">Games People Play</a></li>
+    <li><a href="https://twitter.com/mvark/status/1223946223524044801" rel="nofollow" target="_blank">Freak Weather</a></li>
+    <li><a href="https://twitter.com/mvark/status/1223465541215514624" rel="nofollow" target="_blank">Screen Time</a></li>
+    <li><a href="https://twitter.com/mvark/status/1223222156122677248" rel="nofollow" target="_blank">TouchÃ©</a>&nbsp;</li>
+    <li><a href="https://twitter.com/mvark/status/1221369421261758464" rel="nofollow" target="_blank">Omelette</a></li>
+    <li><a href="https://twitter.com/mvark/status/1220404495764480000" rel="nofollow" target="_blank">Just Another Day In Bangalore</a></li>
+    <li><a href="https://twitter.com/mvark/status/1218749626854981633" rel="nofollow" target="_blank">Contrarian</a></li>
+    <li><a href="https://twitter.com/mvark/status/1218490445338038272" rel="nofollow" target="_blank">Tripping down the Wikipedia Rabbit Hole</a></li>
+    <li><a href="https://twitter.com/mvark/status/1215905719473463297" rel="nofollow" target="_blank">The Machines Have Taken Over</a></li>
+    <li><a href="https://twitter.com/mvark/status/1215898608219766785" rel="nofollow" target="_blank">Smart-ass Appliances</a></li>
+    <li><a href="https://twitter.com/mvark/status/1213674105871855617" rel="nofollow" target="_blank">Whatsapp Break</a></li>
+    <li><a href="https://twitter.com/mvark/status/1213331207808700417" rel="nofollow" target="_blank">Big Deal</a></li>
+    <li><a href="https://twitter.com/mvark/status/1212966034019274757" rel="nofollow" target="_blank">Thinking Things Through</a></li>
+    <li><a href="https://twitter.com/mvark/status/1210784996601937922" rel="nofollow" target="_blank">Cars Have Feelings Too</a>&nbsp;</li>
+    <li><a href="https://twitter.com/mvark/status/1209323611628032001" rel="nofollow" target="_blank">Assisted Walking</a></li>
+    <li><a href="https://twitter.com/mvark/status/1208031409442443265" rel="nofollow" target="_blank">Attention Seeker</a></li>
+    <li><a href="https://twitter.com/mvark/status/1205821940075642880" rel="nofollow" target="_blank">Obesity Warnings We Don't Want To See</a></li>
+    <li><a href="https://twitter.com/mvark/status/1198878016962584576" rel="nofollow" target="_blank">Too Dumb To Be Bad</a></li>
+    <li><a href="https://twitter.com/mvark/status/1195926581866164224" rel="nofollow" target="_blank">Bingeing</a></li>
+    <li><a href="https://twitter.com/mvark/status/1193003930109669377" rel="nofollow" target="_blank">Power Bank</a></li>
+    <li><a href="https://twitter.com/mvark/status/1190624985397616640" rel="nofollow" target="_blank">Dieting through Distractions</a></li>
+    <li><a href="https://twitter.com/mvark/status/1190505511524818945" rel="nofollow" target="_blank">Meditation</a>&nbsp;\ <i>Yoga Nidra</i></li>
+    <li><a href="https://twitter.com/mvark/status/1190115405630586883" rel="nofollow" target="_blank">Workout didn't work out</a></li>
+    <li><a href="https://twitter.com/mvark/status/1187048989725622272" rel="nofollow" target="_blank">Alexa vs Humans</a></li>
+    <li><a href="https://twitter.com/mvark/status/1186500032687558657" rel="nofollow" target="_blank">Swim to Work</a></li>
+    <li><a href="https://twitter.com/mvark/status/1185808383888150528" rel="nofollow" target="_blank">Blog Your Fine Thoughts</a></li>
+    <li><a href="https://twitter.com/mvark/status/1185216057084006402" rel="nofollow" target="_blank">Turning Forgetful</a></li>
+    <li><a href="https://twitter.com/mvark/status/1183310995118116864" rel="nofollow" target="_blank">The Physical World is Meaningless</a></li>
+    <li><a href="https://twitter.com/mvark/status/1176896171945549825" rel="nofollow" target="_blank">Bluetooth Earbuds</a></li>
+    <li><a href="https://twitter.com/mvark/status/1170034355244158976" rel="nofollow" target="_blank">Compromised by Unsecured Databases</a></li>
+    <li><a href="https://twitter.com/mvark/status/1166384332853760000" rel="nofollow" target="_blank">Digital Detox</a></li>
+    <li><a href="https://twitter.com/mvark/status/1158435118505005056" rel="nofollow" target="_blank">Cracking CAPTCHA</a></li>
+    <li><a href="https://twitter.com/mvark/status/1152923165674242048" rel="nofollow" target="_blank">The Flying Vampires</a></li>
+    <li><a href="https://twitter.com/mvark/status/1147467581361537024" rel="nofollow" target="_blank">A True Movie Buff</a></li>
+
+    </ol>
+</div>   
+Click on the Previous & Next buttons to navigate
+<script>
+    // TODO: jump to, on click
+    // Reference: https://stackoverflow.com/a/46144832/325251
+    
+const navbar = Array.from(document.querySelectorAll('#nav>li>a'));
+
+let slideIndex = 0;
+showDivs(slideIndex);
+
+function plusDivs() {
+  slideIndex = slideIndex === navbar.length - 1 ? 0 : slideIndex + 1;
+  showDivs(slideIndex);
+}
+
+function minusDivs() {
+  slideIndex = slideIndex === 0 ? navbar.length - 1 : slideIndex - 1;
+  showDivs(slideIndex);
+}
+
+function showDivs(slideIndex) {
+document.getElementById("show").src="https://twitframe.com/show?url=" + navbar[slideIndex].href;
+}
+</script>
+</body>
+</html>
